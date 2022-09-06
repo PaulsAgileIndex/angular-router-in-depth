@@ -31,7 +31,7 @@ This repository is made of several separate npm modules, that are installable se
     cd angular-router-course
     npm install
 
-Its also possible to install the modules as usual using npm:
+It's also possible to install the modules as usual using npm:
 
     npm install 
 
