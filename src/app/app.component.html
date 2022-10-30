@@ -4,19 +4,19 @@
 
     <div class="toolbar-tools">
       <a class="menu-item" mat-button
-         routerLink="/courses"
+         routerLink="courses"
          routerLinkActive="menu-item-active">
         <span>Courses</span>
       </a>
       <!--      RouterLink version 1.-->
       <a class="menu-item" mat-button
-         routerLink="/about"
+         routerLink="about"
          routerLinkActive="menu-item-active">
         <span>About</span>
       </a>
       <!--      RouterLink / RouterLinkActive version 2.-->
       <a mat-button class="menu-item"
-         [routerLink]="'/login'"
+         [routerLink]="'login'"
          [routerLinkActive]="'menu-item-active'">
         <mat-icon>account_circle</mat-icon>
         <span>Login</span>
