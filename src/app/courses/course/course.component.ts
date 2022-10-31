@@ -18,7 +18,8 @@ export class CourseComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.course = this.route.snapshot.data["course"];
+      // extract the course data and store it inside the course member variable
+      this.course = this.route.snapshot.data["retrievedCourseData"];
     }
 
 

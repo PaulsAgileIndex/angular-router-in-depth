@@ -7,14 +7,20 @@ import {CoursesService} from './courses.service';
 @Injectable()
 export class CourseResolver implements Resolve<Course> {
 
-  constructor(private coursesService:  CoursesService) {
+  /**
+   *
+   * @param coursesService
+   */
+  constructor(private coursesService: CoursesService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
-    Observable<Course> {
-
-    // Example of a url localhost:4200/courses/angular-router-course
-    const courseUrl = route.paramMap.get("courseUrl");
+  /**
+   * Example of a url localhost:4200/courses/angular-router-course
+   * @param route
+   * @param state
+   */
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Course> {
+    const courseUrl = route.paramMap.get('urlSegmentOfACourseProvidedByViewButton');
     return this.coursesService.loadCourseByUrl(courseUrl);
   }
 

@@ -8,19 +8,19 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
-  // First entry = "Home" route, must be the empty path with pathMatch: "full";
-  // Without full match everything would be redirected to /courses because everything starts with an empty string
   {
+    // Home route, must be the empty path with pathMatch: "full";
+    // Without full match everything would be redirected to /courses because everything starts with an empty string
     path: '',
     redirectTo: '/courses',
     pathMatch: 'full'
   },
-  // Lazy loading of subcomponent tree via:
-  // 1.) Dynamic import a file from the file system without extension (.ts) which will return a Promise:
-  //            import('./courses/courses.module')
-  // 2.) ...then load the module from the imported file with:
-  //            .then(m => m.CoursesModule)
   {
+    // Lazy loading of subcomponent tree via:
+    //        1.) Dynamic import a file from the file system without extension (.ts) which will return a Promise:
+    //            import('./courses/courses.module')
+    //        2.) ...then load the module from the imported file with:
+    //            .then(m => m.CoursesModule)
     path: 'courses',
     loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
   },
@@ -32,8 +32,9 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  // Last entry = "Page not found" route, must be put at the end of the routes array! Otherwise, it would match also for e.g. "courses"
   {
+    // Page not found route, must be put at the end of the routes array!
+    // Otherwise, it would match also for e.g. "courses"
     path: '**',
     component: PageNotFoundComponent
   }
